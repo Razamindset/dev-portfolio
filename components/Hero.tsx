@@ -11,13 +11,6 @@ const handleScroll = (href: string) => {
 const ORANGE = "#F97316";
 const INDIGO = "#4F46E5";
 
-const badges = [
-  { label: "Python", top: "8%",  left: "-20%", delay: 0,   color: ORANGE, bg: "#FFF7ED", border: "#FDBA74" },
-  { label: "JS",     top: "72%", left: "-16%", delay: 0.4, color: INDIGO, bg: "#EEF2FF", border: "#A5B4FC" },
-  { label: "C++",    top: "8%",  right: "-16%",delay: 0.2, color: INDIGO, bg: "#EEF2FF", border: "#A5B4FC" },
-  { label: "Node",   top: "72%", right: "-18%",delay: 0.6, color: ORANGE, bg: "#FFF7ED", border: "#FDBA74" },
-];
-
 const stats = [
   { num: "50+", label: "Projects Done",  color: ORANGE },
   { num: "30+", label: "Happy Clients",  color: INDIGO },
@@ -200,33 +193,6 @@ export default function Hero() {
                 priority
               />
             </div>
-
-            {/* Floating tech badges */}
-            {badges.map((badge) => (
-              <motion.div
-                key={badge.label}
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: badge.delay }}
-                style={{
-                  position: "absolute",
-                  top: badge.top,
-                  left: (badge as { left?: string }).left,
-                  right: (badge as { right?: string }).right,
-                  background: badge.bg,
-                  border: `1.5px solid ${badge.border}`,
-                  borderRadius: 10,
-                  padding: "8px 14px",
-                  fontSize: 13,
-                  fontWeight: 700,
-                  color: badge.color,
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
-                  zIndex: 3,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {badge.label}
-              </motion.div>
-            ))}
           </div>
         </motion.div>
       </div>

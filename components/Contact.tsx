@@ -15,11 +15,10 @@ import {
 
 const services = [
   "Automation Solutions",
-  "WhatsApp Bots & Boards",
+  "WhatsApp Bots",
   "Landing Pages & Websites",
   "eCommerce Solutions",
   "Complex Web Applications",
-  "Desktop Applications",
 ];
 
 type FormState = {

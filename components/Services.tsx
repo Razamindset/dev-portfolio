@@ -11,11 +11,10 @@ const INDIGO = "#4F46E5";
 
 const services = [
   { icon: Bot,             title: "Automation Solutions",       desc: "Python-powered bots, workflow automation, and scheduled tasks that save you hours every day.", accent: ORANGE, accentBg: "#FFF7ED", shadowColor: "rgba(249,115,22,0.12)" },
-  { icon: MessageSquare,   title: "WhatsApp Bots & Boards",     desc: "Automated messaging, lead capture, and customer engagement — all through WhatsApp.",            accent: INDIGO, accentBg: "#EEF2FF", shadowColor: "rgba(79,70,229,0.1)"   },
+  { icon: MessageSquare,   title: "WhatsApp Bots",              desc: "Automated messaging, lead capture, and customer engagement — all through WhatsApp.",            accent: INDIGO, accentBg: "#EEF2FF", shadowColor: "rgba(79,70,229,0.1)"   },
   { icon: Globe,           title: "Landing Pages & Websites",   desc: "Fast, responsive, conversion-focused sites that turn visitors into paying clients.",              accent: ORANGE, accentBg: "#FFF7ED", shadowColor: "rgba(249,115,22,0.12)" },
   { icon: ShoppingCart,    title: "eCommerce Solutions",        desc: "Full online store builds with payment integration, inventory management, and admin panels.",       accent: INDIGO, accentBg: "#EEF2FF", shadowColor: "rgba(79,70,229,0.1)"   },
   { icon: LayoutDashboard, title: "Complex Web Applications",   desc: "Custom dashboards, SaaS platforms, internal tools — anything you can imagine, I can build.",     accent: ORANGE, accentBg: "#FFF7ED", shadowColor: "rgba(249,115,22,0.12)" },
-  { icon: Monitor,         title: "Desktop Applications",       desc: "Cross-platform desktop apps in C++ and Electron for performance-critical workflows.",             accent: INDIGO, accentBg: "#EEF2FF", shadowColor: "rgba(79,70,229,0.1)"   },
 ];
 
 function Card({ s, i }: { s: typeof services[0]; i: number }) {

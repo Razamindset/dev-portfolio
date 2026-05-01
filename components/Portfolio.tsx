@@ -19,64 +19,56 @@ const PALETTE = [
 const projects = [
   {
     id: 1,
-    name: "AutoInvoice Pro",
-    desc: "Automated invoice generation and emailing system integrated with Google Sheets.",
-    tags: ["Python", "Google API", "SMTP"],
-    category: "Automation" as Filter,
-    bg: PALETTE[0],
-    icon: "📊",
+    name: "Ali's WhatsApp Assistant",
+    desc: "A custom WhatsApp bot that handles inquiries, provides information, and manages appointment bookings automatically.",
+    tags: ["WhatsApp API", "Node.js", "Automation"],
+    category: "WhatsApp" as Filter,
+    bg: PALETTE[2],
+    icon: "💬",
   },
   {
     id: 2,
-    name: "ShopEase eCommerce",
-    desc: "Full WooCommerce-style online store with custom admin dashboard and payment gateway.",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    name: "Shopfinity eCommerce",
+    desc: "A premium, full-featured eCommerce platform with advanced filtering, cart management, and secure checkout.",
+    tags: ["Next.js", "Tailwind", "Stripe"],
     category: "Web" as Filter,
     bg: PALETTE[1],
     icon: "🛒",
   },
   {
     id: 3,
-    name: "WhatsBot CRM",
-    desc: "WhatsApp bot for lead qualification, appointment booking, and follow-up sequences.",
-    tags: ["WhatsApp API", "Node.js", "MongoDB"],
-    category: "WhatsApp" as Filter,
-    bg: PALETTE[2],
-    icon: "💬",
+    name: "Screen Snipper",
+    desc: "A high-performance web tool for capturing, editing, and sharing screen snippets instantly. (screensnipper.app)",
+    tags: ["React", "Canvas API", "SaaS"],
+    category: "Web" as Filter,
+    bg: PALETTE[0],
+    icon: "✂️",
+    link: "https://www.screensnipper.app"
   },
   {
     id: 4,
-    name: "DataSync Pipeline",
-    desc: "Automated ETL pipeline syncing data between 5 platforms with error alerting.",
-    tags: ["Python", "Airflow", "PostgreSQL"],
-    category: "Automation" as Filter,
-    bg: PALETTE[3],
-    icon: "⚡",
+    name: "Chess Engine from Scratch",
+    desc: "A powerful chess engine built with a custom evaluation function and move searching algorithms.",
+    tags: ["C++", "Algorithms", "Game Dev"],
+    category: "Apps" as Filter,
+    bg: PALETTE[5],
+    icon: "♟️",
   },
   {
     id: 5,
-    name: "SaaS Analytics Dashboard",
-    desc: "Real-time analytics platform with role-based access, charts, and data export.",
-    tags: ["React", "Node.js", "Recharts"],
-    category: "Apps" as Filter,
+    name: "Cactus Cafe Landing Site",
+    desc: "A vibrant, conversion-focused landing page for a popular cafe, featuring their menu and location details.",
+    tags: ["HTML", "CSS", "UI/UX"],
+    category: "Web" as Filter,
     bg: PALETTE[4],
-    icon: "📈",
-  },
-  {
-    id: 6,
-    name: "RestoPOS Desktop",
-    desc: "C++ desktop POS application for restaurants with offline mode and receipt printing.",
-    tags: ["C++", "Qt", "SQLite"],
-    category: "Apps" as Filter,
-    bg: PALETTE[5],
-    icon: "🖥️",
+    icon: "☕",
   },
 ];
 
 function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
   const [hovered, setHovered] = useState(false);
 
-  return (
+  const card = (
     <motion.div
       layout
       initial={{ opacity: 0, scale: 0.94 }}
@@ -95,6 +87,9 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
         transform: hovered ? "translateY(-6px)" : "translateY(0)",
         transition: "all 0.3s ease",
         cursor: "pointer",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       {/* Thumbnail */}
@@ -135,7 +130,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
       </div>
 
       {/* Content */}
-      <div style={{ padding: "24px 24px 28px" }}>
+      <div style={{ padding: "24px 24px 28px", flexGrow: 1, display: "flex", flexDirection: "column" }}>
         <div
           style={{
             fontSize: 11,
@@ -159,7 +154,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
         >
           {project.name}
         </h3>
-        <p style={{ fontSize: 14, color: "#6B7280", lineHeight: 1.6, marginBottom: 16 }}>
+        <p style={{ fontSize: 14, color: "#6B7280", lineHeight: 1.6, marginBottom: 16, flexGrow: 1 }}>
           {project.desc}
         </p>
 
@@ -185,6 +180,16 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
       </div>
     </motion.div>
   );
+
+  if ('link' in project && project.link) {
+    return (
+      <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+        {card}
+      </a>
+    );
+  }
+
+  return card;
 }
 
 export default function Portfolio() {
