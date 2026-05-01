@@ -66,7 +66,7 @@ export default function Navbar() {
               textDecoration: "none",
             }}
           >
-            &lt;Ali /&gt;
+            &lt;Ali Raza Khalid /&gt;
           </a>
 
           {/* Desktop nav */}

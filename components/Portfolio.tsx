@@ -16,15 +16,18 @@ const PALETTE = [
   "linear-gradient(135deg, #a18cd1, #fbc2eb)",
 ];
 
+import Image from "next/image";
+
 const projects = [
   {
     id: 1,
-    name: "Ali's WhatsApp Assistant",
+    name: "Super Brain WhatsApp Bot",
     desc: "A custom WhatsApp bot that handles inquiries, provides information, and manages appointment bookings automatically.",
     tags: ["WhatsApp API", "Node.js", "Automation"],
     category: "WhatsApp" as Filter,
     bg: PALETTE[2],
     icon: "💬",
+    link: "https://github.com/Razamindset/super-brain-whatsapp"
   },
   {
     id: 2,
@@ -34,6 +37,8 @@ const projects = [
     category: "Web" as Filter,
     bg: PALETTE[1],
     icon: "🛒",
+    link: "https://shopfinity-ecommerce.netlify.app/",
+    thumbnail: "/assets/shopfinity.png"
   },
   {
     id: 3,
@@ -43,25 +48,40 @@ const projects = [
     category: "Web" as Filter,
     bg: PALETTE[0],
     icon: "✂️",
-    link: "https://www.screensnipper.app"
+    link: "https://www.screensnipper.app",
+    thumbnail: "/assets/screensnipper.png"
   },
   {
     id: 4,
-    name: "Chess Engine from Scratch",
+    name: "Indus Dragon (Chess Engine)",
     desc: "A powerful chess engine built with a custom evaluation function and move searching algorithms.",
     tags: ["C++", "Algorithms", "Game Dev"],
     category: "Apps" as Filter,
     bg: PALETTE[5],
     icon: "♟️",
+    link: "https://github.com/Razamindset/indus-dragon/"
   },
   {
     id: 5,
-    name: "Cactus Cafe Landing Site",
+    name: "Cactus Coffee Landing Site",
     desc: "A vibrant, conversion-focused landing page for a popular cafe, featuring their menu and location details.",
     tags: ["HTML", "CSS", "UI/UX"],
     category: "Web" as Filter,
     bg: PALETTE[4],
     icon: "☕",
+    link: "https://landing-cactus-coffe.vercel.app/",
+    thumbnail: "/assets/cactuscaffee.png"
+  },
+  {
+    id: 6,
+    name: "Fishy Chess Server",
+    desc: "A realtime chess server supporting online play, matchmaking, and move validation.",
+    tags: ["Node.js", "Socket.io", "React"],
+    category: "Apps" as Filter,
+    bg: PALETTE[3],
+    icon: "🐟",
+    link: "https://github.com/Razamindset/fishy",
+    thumbnail: "/assets/fishy.png"
   },
 ];
 
@@ -105,9 +125,18 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
           overflow: "hidden",
         }}
       >
-        <span style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.2))" }}>
-          {project.icon}
-        </span>
+        {('thumbnail' in project && project.thumbnail) ? (
+          <Image
+            src={project.thumbnail}
+            alt={project.name}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        ) : (
+          <span style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.2))" }}>
+            {project.icon}
+          </span>
+        )}
 
         {/* Hover overlay */}
         <motion.div
@@ -122,6 +151,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
             justifyContent: "center",
             flexDirection: "column",
             gap: 8,
+            zIndex: 1,
           }}
         >
           <ExternalLink size={32} color="#fff" />

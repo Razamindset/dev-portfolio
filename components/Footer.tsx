@@ -41,7 +41,7 @@ export default function Footer() {
               marginBottom: 8,
             }}
           >
-            &lt;Ali /&gt;
+            &lt;Ali Raza Khalid /&gt;
           </span>
           <p style={{ fontSize: 14, color: "#6B7280", maxWidth: 240, lineHeight: 1.7 }}>
             Turning complex problems into simple, powerful solutions.
@@ -128,7 +128,7 @@ export default function Footer() {
           color: "#4B5563",
         }}
       >
-        © 2025 &nbsp;·&nbsp; Built with purpose
+        &copy; {new Date().getFullYear()} Ali Raza Khalid &nbsp;·&nbsp; Built with purpose
       </div>
 
       <style>{`
