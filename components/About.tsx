@@ -18,8 +18,8 @@ const skills = [
 ];
 
 const stats = [
-  { num: "50+", label: "Projects Delivered" },
-  { num: "30+", label: "Happy Clients" },
+  { num: "7+", label: "Projects Delivered" },
+  { num: "6+", label: "Happy Clients" },
   { num: "5+", label: "Years Experience" },
   { num: "12+", label: "Technologies" },
 ];

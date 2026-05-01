@@ -12,8 +12,8 @@ const ORANGE = "#F97316";
 const INDIGO = "#4F46E5";
 
 const stats = [
-  { num: "50+", label: "Projects Done",  color: ORANGE },
-  { num: "30+", label: "Happy Clients",  color: INDIGO },
+  { num: "7+",  label: "Projects Done",  color: ORANGE },
+  { num: "6+",  label: "Happy Clients",  color: INDIGO },
   { num: "5+",  label: "Years Exp.",     color: ORANGE },
 ];
 

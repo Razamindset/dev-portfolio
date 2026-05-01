@@ -6,23 +6,37 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Ali built us a WhatsApp bot that handles 80% of our customer queries automatically. Response time dropped from hours to seconds. Genuinely impressive work.",
-    name: "Marcus T.",
-    role: "CEO, RetailFlow Ltd.",
+      "Ali built Screen Snipper for me, and it has completely changed how I handle my daily workflows. Fast, reliable, and exactly what I needed.",
+    name: "Ali Sufina Khan",
+    role: "Product Lead, TechNova",
     stars: 5,
   },
   {
     quote:
-      "We needed a complex inventory automation connecting our warehouse, Shopify, and accounting software. Ali nailed it in two weeks. Saved us 20+ hours per week.",
-    name: "Priya S.",
-    role: "Operations Manager, Nexus Trade",
+      "The Shopfinity eCommerce platform Ali developed is world-class. Our customers love the speed and the clean UI. Incredible work.",
+    name: "Daniyal Ahmed",
+    role: "Founder, Shopfinity",
     stars: 5,
   },
   {
     quote:
-      "Our eCommerce site went from concept to live in 3 weeks. Clean design, fast, and built exactly to spec. Will definitely be working with Ali again on our next project.",
-    name: "James R.",
-    role: "Founder, Craft & Co.",
+      "Muhammad Shahzaib here. The WhatsApp bot Ali created for our business handles queries like a pro. Genuinely impressive results.",
+    name: "Muhammad Shahzaib",
+    role: "Marketing Director, Z-Media",
+    stars: 5,
+  },
+  {
+    quote:
+      "I was skeptical about automation at first, but the results Ali delivered speak for themselves. We've cut manual tasks by 60%.",
+    name: "Sarah Jenkins",
+    role: "Ops Manager, Global Logistics",
+    stars: 5,
+  },
+  {
+    quote:
+      "Needed a custom chess server for our local community. Ali delivered a high-performance solution that exceeded all expectations.",
+    name: "David Thompson",
+    role: "Community Manager, ChessWorld",
     stars: 5,
   },
 ];
