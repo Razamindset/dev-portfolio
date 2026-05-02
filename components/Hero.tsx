@@ -78,6 +78,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.6 }}
             style={{ display: "flex", gap: 16, flexWrap: "wrap" }}
+            className="hero-ctas"
           >
             {/* Primary — Orange */}
             <button
@@ -115,6 +116,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.6 }}
             style={{ marginTop: 56, display: "flex", gap: 36, flexWrap: "wrap" }}
+            className="hero-stats"
           >
             {stats.map((s) => (
               <div key={s.label}>
@@ -203,8 +205,11 @@ export default function Hero() {
           50% { opacity: 0.4; transform: scale(1.5); }
         }
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
-          .hero-grid > div:last-child { display: none !important; }
+          .hero-grid { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; }
+          .hero-grid > div:last-child { display: flex !important; margin-top: 20px; transform: scale(0.9); }
+          .hero-ctas { justify-content: center; flex-wrap: nowrap !important; }
+          .hero-stats { justify-content: center; }
+          .hero-ctas button { padding: 12px 16px !important; font-size: 14px !important; width: 100%; justify-content: center; }
         }
       `}</style>
     </section>
