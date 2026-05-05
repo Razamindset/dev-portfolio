@@ -131,6 +131,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <div
+              className="contact-info-card"
               style={{
                 background: "#fff",
                 borderRadius: 20,
@@ -211,7 +212,7 @@ export default function Contact() {
                 }}
               >
                 <Mail size={18} color="#9CA3AF" />
-                <span style={{ fontSize: 15, color: "#374151", flex: 1, fontWeight: 500 }}>
+                <span style={{ fontSize: 15, color: "#374151", flex: 1, fontWeight: 500, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {EMAIL}
                 </span>
                 <button
@@ -297,6 +298,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <div
+              className="contact-form-card"
               style={{
                 background: "#fff",
                 borderRadius: 20,
@@ -507,6 +509,9 @@ export default function Contact() {
         @media (max-width: 768px) {
           .contact-grid { grid-template-columns: 1fr !important; }
           .form-row { grid-template-columns: 1fr !important; }
+          #contact > div { padding-left: 20px !important; padding-right: 20px !important; }
+          .contact-info-card { padding: 28px 20px !important; }
+          .contact-form-card { padding: 28px 20px !important; }
         }
       `}</style>
     </section>

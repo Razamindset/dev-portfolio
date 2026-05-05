@@ -325,6 +325,7 @@ export default function Portfolio() {
         }
         @media (max-width: 640px) {
           .portfolio-grid { grid-template-columns: 1fr !important; }
+          #portfolio > div { padding-left: 20px !important; padding-right: 20px !important; }
         }
       `}</style>
     </section>

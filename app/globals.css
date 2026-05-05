@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* Dot grid hero background */
@@ -56,4 +58,14 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #F97316;
   border-radius: 3px;
+}
+
+/* ── Global mobile overflow guard ── */
+@media (max-width: 768px) {
+  section,
+  header,
+  footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 }

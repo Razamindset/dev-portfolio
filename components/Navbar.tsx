@@ -44,6 +44,7 @@ export default function Navbar() {
         }}
       >
         <div
+          className="navbar-inner"
           style={{
             maxWidth: 1280,
             margin: "0 auto",
@@ -211,6 +212,7 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
+          .navbar-inner { padding: 0 16px !important; }
         }
       `}</style>
     </>

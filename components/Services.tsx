@@ -60,7 +60,10 @@ export default function Services() {
       </div>
       <style>{`
         @media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)!important;}}
-        @media(max-width:640px){.services-grid{grid-template-columns:1fr!important;}}
+        @media(max-width:640px){
+          .services-grid{grid-template-columns:1fr!important;}
+          #services > div { padding-left: 20px !important; padding-right: 20px !important; }
+        }
       `}</style>
     </section>
   );

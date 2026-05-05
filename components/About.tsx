@@ -249,6 +249,7 @@ export default function About() {
       <style>{`
         @media (max-width: 768px) {
           .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          #about > div { padding-left: 20px !important; padding-right: 20px !important; }
         }
       `}</style>
     </section>

@@ -136,6 +136,8 @@ export default function Footer() {
           .footer-grid {
             grid-template-columns: 1fr !important;
             text-align: center;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
           }
           .footer-grid > div:last-child {
             justify-content: center !important;
@@ -146,6 +148,10 @@ export default function Footer() {
             flex-wrap: wrap;
             justify-content: center;
             gap: 16px;
+          }
+          footer > div:last-child {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
           }
         }
       `}</style>

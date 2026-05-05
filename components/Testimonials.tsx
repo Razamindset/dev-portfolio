@@ -202,6 +202,7 @@ export default function Testimonials() {
         }
         @media (max-width: 640px) {
           .testimonials-grid { grid-template-columns: 1fr !important; }
+          #testimonials > div { padding-left: 20px !important; padding-right: 20px !important; }
         }
       `}</style>
     </section>
