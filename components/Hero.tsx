@@ -87,9 +87,9 @@ export default function Hero() {
                 display: "flex", alignItems: "center", gap: 8,
                 background: ORANGE, color: "#fff", border: "none", borderRadius: 10,
                 fontSize: 16, fontWeight: 700, cursor: "pointer",
+                padding: "14px 28px",
                 fontFamily: "Inter, sans-serif", transition: "all 0.2s",
               }}
-              className="px-6 py-3 md:px-14 md:py-7"
               onMouseEnter={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = "#EA6C10"; el.style.transform = "translateY(-2px)"; }}
               onMouseLeave={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = ORANGE; el.style.transform = "translateY(0)"; }}
             >
