@@ -12,9 +12,9 @@ const ORANGE = "#F97316";
 const INDIGO = "#4F46E5";
 
 const stats = [
-  { num: "7+",  label: "Projects Done",  color: ORANGE },
-  { num: "6+",  label: "Happy Clients",  color: INDIGO },
-  { num: "5+",  label: "Years Exp.",     color: ORANGE },
+  { num: "7+", label: "Projects Done", color: ORANGE },
+  { num: "6+", label: "Happy Clients", color: INDIGO },
+  { num: "5+", label: "Years Exp.", color: ORANGE },
 ];
 
 export default function Hero() {
@@ -86,9 +86,10 @@ export default function Hero() {
               style={{
                 display: "flex", alignItems: "center", gap: 8,
                 background: ORANGE, color: "#fff", border: "none", borderRadius: 10,
-                padding: "14px 28px", fontSize: 16, fontWeight: 700, cursor: "pointer",
+                fontSize: 16, fontWeight: 700, cursor: "pointer",
                 fontFamily: "Inter, sans-serif", transition: "all 0.2s",
               }}
+              className="px-6 py-3 md:px-14 md:py-7"
               onMouseEnter={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = "#EA6C10"; el.style.transform = "translateY(-2px)"; }}
               onMouseLeave={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = ORANGE; el.style.transform = "translateY(0)"; }}
             >
@@ -177,6 +178,6 @@ export default function Hero() {
           .hero-ctas button { padding: 12px 16px !important; font-size: 14px !important; width: 100%; justify-content: center; }
         }
       `}</style>
-    </section>
+    </section >
   );
 }
