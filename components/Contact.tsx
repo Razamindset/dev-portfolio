@@ -125,8 +125,8 @@ export default function Contact() {
         >
           {/* Left — Info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
@@ -164,7 +164,7 @@ export default function Contact() {
 
               {/* WhatsApp button */}
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me/923215477083"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -292,8 +292,8 @@ export default function Contact() {
 
           {/* Right — Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >

@@ -37,7 +37,7 @@ export default function Hero() {
         className="hero-grid"
       >
         {/* ─── Left ─── */}
-        <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, ease: "easeOut" }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }}>
 
           {/* Available badge */}
           <motion.div
@@ -88,7 +88,6 @@ export default function Hero() {
                 background: ORANGE, color: "#fff", border: "none", borderRadius: 10,
                 padding: "14px 28px", fontSize: 16, fontWeight: 700, cursor: "pointer",
                 fontFamily: "Inter, sans-serif", transition: "all 0.2s",
-                boxShadow: "0 4px 20px rgba(249,115,22,0.35)",
               }}
               onMouseEnter={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = "#EA6C10"; el.style.transform = "translateY(-2px)"; }}
               onMouseLeave={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = ORANGE; el.style.transform = "translateY(0)"; }}
@@ -129,52 +128,18 @@ export default function Hero() {
 
         {/* ─── Right ─── */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
         >
           <div style={{ position: "relative" }}>
 
-            {/* Dual-color glow blob */}
-            <motion.div
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              style={{
-                position: "absolute",
-                width: 360,
-                height: 360,
-                borderRadius: "50%",
-                background: "radial-gradient(circle at 40% 40%, rgba(249,115,22,0.15) 0%, rgba(79,70,229,0.12) 60%, transparent 80%)",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%,-50%)",
-                zIndex: 0,
-              }}
-            />
 
-            {/* Spinning ring — indigo */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-              style={{
-                position: "absolute", inset: -10, borderRadius: "50%",
-                border: "2px dashed rgba(79,70,229,0.35)",
-                zIndex: 1,
-              }}
-            />
 
-            {/* Slow counter-spinning ring — orange */}
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-              style={{
-                position: "absolute", inset: -22, borderRadius: "50%",
-                border: "1.5px dashed rgba(249,115,22,0.25)",
-                zIndex: 1,
-              }}
-            />
+
 
             {/* Profile photo */}
             <div
+              className="hero-image-wrapper"
               style={{
                 width: 300,
                 height: 300,
@@ -182,9 +147,7 @@ export default function Hero() {
                 overflow: "hidden",
                 position: "relative",
                 zIndex: 2,
-                boxShadow: "0 20px 60px rgba(79,70,229,0.2), 0 8px 30px rgba(249,115,22,0.15)",
                 border: "4px solid #fff",
-                outline: "3px solid rgba(79,70,229,0.3)",
               }}
             >
               <Image
@@ -205,8 +168,10 @@ export default function Hero() {
           50% { opacity: 0.4; transform: scale(1.5); }
         }
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; }
-          .hero-grid > div:last-child { display: flex !important; margin-top: 20px; transform: scale(0.9); }
+          .hero-grid { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; padding: 40px 24px !important; }
+          .hero-grid > div:last-child { display: flex !important; margin-top: 20px; }
+          .hero-image-wrapper { width: 260px !important; height: 260px !important; }
+          .hero-glow { width: 300px !important; height: 300px !important; }
           .hero-ctas { justify-content: center; flex-wrap: nowrap !important; }
           .hero-stats { justify-content: center; }
           .hero-ctas button { padding: 12px 16px !important; font-size: 14px !important; width: 100%; justify-content: center; }
