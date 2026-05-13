@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoSend } from "react-icons/io5";
+import { CheckCircle } from "lucide-react";
 
 const services = [
   "Automation Solutions",
@@ -199,6 +200,29 @@ export default function Contact() {
               <FaLinkedin size={22} />
               LinkedIn
             </a>
+            <a
+              href="https://github.com/Razamindset"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-btn github"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 12,
+                background: "#111827",
+                color: "#fff",
+                borderRadius: 12,
+                padding: "16px",
+                fontSize: 16,
+                fontWeight: 700,
+                textDecoration: "none",
+                flex: 1,
+              }}
+            >
+              <FaGithub size={22} />
+              GitHub
+            </a>
           </div>
         </div>
 
@@ -219,7 +243,9 @@ export default function Contact() {
         >
           {sent ? (
             <div style={{ textAlign: "center", padding: "20px 0" }}>
-              <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+              <div style={{ marginBottom: 16, display: "flex", justifyContent: "center" }}>
+                <CheckCircle size={56} color="#10B981" />
+              </div>
               <h3 style={{ fontSize: 22, fontWeight: 800, color: "#111827", marginBottom: 10 }}>
                 Message Sent!
               </h3>

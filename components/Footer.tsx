@@ -1,6 +1,7 @@
 "use client";
 
-import { Briefcase, GitBranch, Camera } from "lucide-react";
+import { Briefcase, Camera } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -80,7 +81,7 @@ export default function Footer() {
         <div style={{ display: "flex", gap: 12, justifyContent: "flex-end" }}>
           {[
             { Icon: Briefcase, href: "https://linkedin.com/in/razamindset", label: "LinkedIn" },
-            { Icon: GitBranch, href: "https://github.com/razamindset", label: "GitHub" },
+            { Icon: FaGithub, href: "https://github.com/Razamindset", label: "GitHub" },
             { Icon: Camera, href: "https://instagram.com/razamindset", label: "Instagram" },
           ].map(({ Icon, href, label }) => (
             <a

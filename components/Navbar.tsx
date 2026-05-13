@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -99,6 +100,42 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
+            
+            <a
+              href="https://github.com/Razamindset"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 38,
+                height: 38,
+                borderRadius: "50%",
+                background: "#f3f4f6",
+                color: "#111827",
+                marginLeft: 12,
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                textDecoration: "none"
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = "#111827";
+                el.style.color = "#fff";
+                el.style.transform = "translateY(-2px) rotate(8deg)";
+                el.style.boxShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.1)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = "#f3f4f6";
+                el.style.color = "#111827";
+                el.style.transform = "translateY(0) rotate(0)";
+                el.style.boxShadow = "none";
+              }}
+            >
+              <FaGithub size={20} />
+            </a>
+
             <button
               onClick={() => handleNav("#contact")}
               style={{

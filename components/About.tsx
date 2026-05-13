@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Zap, ShieldCheck, Globe } from "lucide-react";
 
 const skills = [
   "Python",
@@ -219,9 +220,9 @@ export default function About() {
             {/* Extra info cards */}
             <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 14 }}>
               {[
-                { emoji: "⚡", label: "Fast turnaround — most projects in 1–3 weeks" },
-                { emoji: "🔒", label: "NDA-friendly, confidential & secure" },
-                { emoji: "🌍", label: "Work with clients globally, remote-first" },
+                { Icon: Zap, label: "Fast turnaround — most projects in 1–3 weeks", color: "#F59E0B" },
+                { Icon: ShieldCheck, label: "NDA-friendly, confidential & secure", color: "#10B981" },
+                { Icon: Globe, label: "Work with clients globally, remote-first", color: "#3B82F6" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -235,7 +236,7 @@ export default function About() {
                     border: "1px solid #F3F4F6",
                   }}
                 >
-                  <span style={{ fontSize: 20 }}>{item.emoji}</span>
+                  <item.Icon size={20} color={item.color} strokeWidth={2.5} />
                   <span style={{ fontSize: 14, color: "#374151", fontWeight: 500 }}>
                     {item.label}
                   </span>

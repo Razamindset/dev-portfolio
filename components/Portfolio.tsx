@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const filters = ["All", "Automation", "Web", "WhatsApp", "Apps"] as const;
 type Filter = (typeof filters)[number];
@@ -316,6 +317,53 @@ export default function Portfolio() {
               <ProjectCard key={p.id} project={p} index={i} />
             ))}
           </AnimatePresence>
+        </motion.div>
+
+        {/* View All on GitHub */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          style={{ marginTop: 60, textAlign: "center" }}
+        >
+          <a
+            href="https://github.com/Razamindset"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 12,
+              padding: "16px 32px",
+              borderRadius: 12,
+              background: "#111827",
+              color: "#fff",
+              textDecoration: "none",
+              fontSize: 16,
+              fontWeight: 700,
+              transition: "all 0.3s ease",
+              boxShadow: "0 10px 20px -10px rgba(0,0,0,0.5)"
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.background = "#000";
+              el.style.transform = "translateY(-4px)";
+              el.style.boxShadow = "0 20px 30px -10px rgba(0,0,0,0.4)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.background = "#111827";
+              el.style.transform = "translateY(0)";
+              el.style.boxShadow = "0 10px 20px -10px rgba(0,0,0,0.5)";
+            }}
+          >
+            <FaGithub size={22} />
+            Check Out My GitHub Profile
+          </a>
+          <p style={{ marginTop: 16, fontSize: 14, color: "#9CA3AF" }}>
+            Exploring more projects, experiments, and open-source contributions.
+          </p>
         </motion.div>
       </div>
 
