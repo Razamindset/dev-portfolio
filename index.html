@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Raza Khalid - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#121212',
+                        darker: '#0a0a0a',
+                        card: '#1e1e1e',
+                        accent: '#f4775b',
+                        accentLight: '#ff9a7a',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Simple texture background */
+        body {
+            background-color: #121212;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23ffffff' fill-opacity='0.015' fill-rule='evenodd'/%3E%3C/svg%3E");
+            color: #e5e5e5;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #121212; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f4775b; }
+
+        .nav-link.active { color: #ffffff; font-weight: 600; }
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 100%;
+            background-color: #f4775b;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 0 8px rgba(244, 119, 91, 0.45);
+        }
+
+        /* Reveal animations on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body class="antialiased selection:bg-[#f4775b]/30 selection:text-white">
+
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row min-h-screen">
+    
+    <!-- Left Sidebar Card -->
+    <!-- Removed overflow-y-auto to guarantee NO scrollbar. Content is now compact enough to fit perfectly. -->
+    <header class="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[40%] xl:w-1/3 lg:flex-col lg:justify-between py-10 lg:py-12 px-6 lg:px-10 xl:px-12 bg-[#0a0a0a]/90 backdrop-blur-md border-r border-zinc-800/50 shadow-2xl z-20">
+        <div class="animate-fade-in-up">
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                <!-- Profile image accent -->
+                <div class="relative mb-4 group">
+                    <div class="absolute inset-0 bg-[#f4775b] rounded-full blur-md opacity-20 group-hover:opacity-35 transition-opacity duration-500"></div>
+                    <img src="./1.png" alt="Ali Raza Khalid" class="relative w-28 h-28 lg:w-32 lg:h-32 rounded-full border border-zinc-700/50 object-cover shadow-xl group-hover:scale-[1.02] transition-transform duration-500">
+                </div>
+                
+                <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-2">Ali Raza Khalid</h1>
+                <h2 class="text-base lg:text-lg font-medium text-zinc-300 mb-3 flex items-center justify-center lg:justify-start gap-2">
+                    Machine Learning Engineer
+                </h2>
+            </div>
+        </div>
+
+        <div class="mt-8 lg:mt-auto w-full">
+            <!-- Navigation -->
+            <nav class="hidden lg:block nav mb-8">
+                <ul class="flex flex-col space-y-4">
+                    <li><a href="#about" class="nav-link relative block w-max text-zinc-500 hover:text-white transition-all uppercase tracking-widest text-xs font-bold active group flex items-center"><span class="group-hover:translate-x-2 group-hover:text-[#ff9a7a] transition-all duration-300">About</span></a></li>
+                    <li><a href="#skills" class="nav-link relative block w-max text-zinc-500 hover:text-white transition-all uppercase tracking-widest text-xs font-bold group flex items-center"><span class="group-hover:translate-x-2 group-hover:text-[#ff9a7a] transition-all duration-300">Skills</span></a></li>
+                    <li><a href="#projects" class="nav-link relative block w-max text-zinc-500 hover:text-white transition-all uppercase tracking-widest text-xs font-bold group flex items-center"><span class="group-hover:translate-x-2 group-hover:text-[#ff9a7a] transition-all duration-300">Projects</span></a></li>
+                    <li><a href="#research" class="nav-link relative block w-max text-zinc-500 hover:text-white transition-all uppercase tracking-widest text-xs font-bold group flex items-center"><span class="group-hover:translate-x-2 group-hover:text-[#ff9a7a] transition-all duration-300">Research & Writing</span></a></li>
+                    <li><a href="#experience" class="nav-link relative block w-max text-zinc-500 hover:text-white transition-all uppercase tracking-widest text-xs font-bold group flex items-center"><span class="group-hover:translate-x-2 group-hover:text-[#ff9a7a] transition-all duration-300">Experience & Education</span></a></li>
+                </ul>
+            </nav>
+
+            <!-- Social & Contact Links -->
+            <div class="mt-8 lg:mt-0 flex justify-center lg:justify-start gap-5 animate-fade-in-up" style="animation-delay: 0.2s;">
+            <a href="mailto:razamindset.official@gmail.com" aria-label="Email" class="text-zinc-400 hover:text-[#ff9a7a] transition-colors group">
+                <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+            <a href="https://github.com/Razamindset" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-zinc-400 hover:text-[#ff9a7a] transition-colors group">
+                <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/razamindset" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-zinc-400 hover:text-[#ff9a7a] transition-colors group">
+                <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://razamindset.dev" target="_blank" rel="noopener noreferrer" aria-label="Website" class="text-zinc-400 hover:text-[#ff9a7a] transition-colors group">
+                <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Right Content Area -->
+    <main class="lg:w-[60%] xl:w-2/3 px-6 py-12 lg:px-24 lg:py-24 flex flex-col gap-32">
+        
+        <!-- About Section -->
+        <section id="about" class="scroll-mt-24 reveal">
+            <div class="sticky top-0 z-10 bg-[#121212]/95 backdrop-blur py-5 mb-8 -mx-6 px-6 lg:static lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:m-0 lg:mb-8 border-b border-zinc-800/50 lg:border-none">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-zinc-100 flex items-center">
+                    <span class="w-8 h-px bg-[#f4775b] mr-4"></span> About
+                </h2>
+            </div>
+            
+            <div class="max-w-3xl">
+                <h3 class="text-3xl lg:text-4xl font-bold leading-tight text-white mb-5">
+                    I build machine-learning models <span class="text-[#ff9a7a]">and the products around them.</span>
+                </h3>
+                <p class="max-w-2xl text-zinc-400 text-base leading-relaxed">
+                    I work across computer vision, efficient edge AI, full-stack development, and chatbots.
+                </p>
+                <a href="https://github.com/Razamindset/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#ff9a7a] hover:text-white transition-colors">
+                    GitHub profile
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+
+                <div class="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-7">
+                    <div class="flex items-start gap-3">
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f4775b]/10 text-[#ff9a7a]">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M2.5 12s3.25-6 9.5-6 9.5 6 9.5 6-3.25 6-9.5 6-9.5-6-9.5-6z"></path><circle cx="12" cy="12" r="2.5" stroke-width="1.7"></circle></svg>
+                        </span>
+                        <div>
+                            <h3 class="text-sm font-semibold text-zinc-100 mb-1">Computer vision</h3>
+                            <p class="text-sm leading-relaxed text-zinc-500">Segmentation models and neural networks built from scratch.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f4775b]/10 text-[#ff9a7a]">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2" stroke-width="1.7"></rect><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 9h6v6H9zM9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m14 0h3M2 15h3m14 0h3"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="text-sm font-semibold text-zinc-100 mb-1">Efficient AI</h3>
+                            <p class="text-sm leading-relaxed text-zinc-500">Optimizing models for fast CPU and edge-device inference.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f4775b]/10 text-[#ff9a7a]">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="m8 8-4 4 4 4m8-8 4 4-4 4m-3-10-2 12"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="text-sm font-semibold text-zinc-100 mb-1">Full-stack products</h3>
+                            <p class="text-sm leading-relaxed text-zinc-500">Web apps built from the interface through the backend.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f4775b]/10 text-[#ff9a7a]">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M20 11.5a7.5 7.5 0 01-7.5 7.5H7l-4 2v-6a7.5 7.5 0 117 7.5h2.5A7.5 7.5 0 0020 11.5z"></path></svg>
+                        </span>
+                        <div>
+                            <h3 class="text-sm font-semibold text-zinc-100 mb-1">Chatbots & applied AI</h3>
+                            <p class="text-sm leading-relaxed text-zinc-500">Conversational tools that make AI useful in real products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="scroll-mt-24 reveal">
+            <div class="sticky top-0 z-10 bg-[#121212]/95 backdrop-blur py-5 mb-8 -mx-6 px-6 lg:static lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:m-0 lg:mb-8 border-b border-zinc-800/50 lg:border-none">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-zinc-100 flex items-center">
+                    <span class="w-8 h-px bg-[#f4775b] mr-4"></span> Skills
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Skill Card -->
+                <div class="group bg-[#1b1d20] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/50 hover:bg-[#202327] transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_8px_30px_rgb(244,119,91,0.08)]">
+                    <h4 class="text-zinc-100 font-semibold mb-5 flex items-center text-sm tracking-wide">
+                        <svg class="w-5 h-5 mr-3 text-[#f4775b] group-hover:text-[#ff9a7a] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        Programming & Tools
+                    </h4>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Python</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">C++</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">JavaScript</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">TypeScript</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">SQL</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card -->
+                <div class="group bg-[#1b1d20] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/50 hover:bg-[#202327] transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_8px_30px_rgb(244,119,91,0.08)]">
+                    <h4 class="text-zinc-100 font-semibold mb-5 flex items-center text-sm tracking-wide">
+                        <svg class="w-5 h-5 mr-3 text-[#f4775b] group-hover:text-[#ff9a7a] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        Deep Learning
+                    </h4>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">PyTorch</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Scikit-learn</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">CNNs</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Transformers</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">RNN/LSTM</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card -->
+                <div class="group bg-[#1b1d20] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/50 hover:bg-[#202327] transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_8px_30px_rgb(244,119,91,0.08)]">
+                    <h4 class="text-zinc-100 font-semibold mb-5 flex items-center text-sm tracking-wide">
+                        <svg class="w-5 h-5 mr-3 text-[#f4775b] group-hover:text-[#ff9a7a] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        Computer Vision
+                    </h4>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">OpenCV</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Classification</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Segmentation</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">U-Net</span>
+                    </div>
+                </div>
+
+                <!-- Skill Card -->
+                <div class="group bg-[#1b1d20] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/50 hover:bg-[#202327] transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_8px_30px_rgb(244,119,91,0.08)]">
+                    <h4 class="text-zinc-100 font-semibold mb-5 flex items-center text-sm tracking-wide">
+                        <svg class="w-5 h-5 mr-3 text-[#f4775b] group-hover:text-[#ff9a7a] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                        Edge Deployment
+                    </h4>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">C++ AVX2</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">INT8 Vector Ops</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">CPU Inference</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Full-Stack and AI Applications -->
+                <div class="group md:col-span-2 md:flex md:items-center md:justify-between md:gap-6 bg-[#1b1d20] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/50 hover:bg-[#202327] transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-[0_8px_30px_rgb(244,119,91,0.08)]">
+                    <h4 class="text-zinc-100 font-semibold mb-5 md:mb-0 flex items-center text-sm tracking-wide">
+                        <svg class="w-5 h-5 mr-3 text-[#f4775b] group-hover:text-[#ff9a7a] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5h16M4 12h16M4 19h16M8 5v14m8-14v14"></path></svg>
+                        Full-Stack & AI Applications
+                    </h4>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">React.js</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Next.js</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Node.js</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">MongoDB</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Firebase</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Chatbots</span>
+                        <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">AI-Powered Applications</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="scroll-mt-24 reveal">
+            <div class="sticky top-0 z-10 bg-[#121212]/95 backdrop-blur py-5 mb-8 -mx-6 px-6 lg:static lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:m-0 lg:mb-8 border-b border-zinc-800/50 lg:border-none">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-zinc-100 flex items-center">
+                    <span class="w-8 h-px bg-[#f4775b] mr-4"></span> Projects
+                </h2>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Project 1 -->
+                <div class="group relative flex flex-col items-start gap-4 bg-[#1b1d20] transition-all hover:bg-[#202327] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/40 shadow-sm hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-full">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3 gap-2">
+                            <h4 class="text-zinc-100 font-bold text-lg group-hover:text-[#ff9a7a] transition-colors">
+                                <a href="https://github.com/Razamindset/image-segmentation-with-unet" target="_blank" rel="noopener noreferrer" class="focus:outline-none flex items-center">
+                                    Image Segmentation with U-Net
+                                    <svg class="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </h4>
+                            <span class="text-xs text-[#ffc0ad] font-semibold tracking-wide bg-[#f4775b]/10 px-3 py-1 rounded-md">Python, PyTorch</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Built and trained a U-Net model predicting masks for objects. Added image augmentation for higher accuracy, achieving a validation Dice score of 0.85 and IoU of 0.76.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative flex flex-col items-start gap-4 bg-[#1b1d20] transition-all hover:bg-[#202327] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/40 shadow-sm hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-full">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3 gap-2">
+                            <h4 class="text-zinc-100 font-bold text-lg group-hover:text-[#ff9a7a] transition-colors">
+                                <a href="https://github.com/Razamindset/cifar10-cnn-experiments" target="_blank" rel="noopener noreferrer" class="focus:outline-none flex items-center">
+                                    CNN Study on CIFAR
+                                    <svg class="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </h4>
+                            <span class="text-xs text-[#ffc0ad] font-semibold tracking-wide bg-[#f4775b]/10 px-3 py-1 rounded-md">Python, PyTorch</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Improved a CNN from 75% to 87% accuracy. Implemented dropout, BatchNorm with GELU, learning rate schedulers, and fixed data augmentation leaks between training and evaluation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative flex flex-col items-start gap-4 bg-[#1b1d20] transition-all hover:bg-[#202327] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/40 shadow-sm hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-full">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3 gap-2">
+                            <h4 class="text-zinc-100 font-bold text-lg group-hover:text-[#ff9a7a] transition-colors">
+                                <a href="https://github.com/Razamindset/indus-dragon" target="_blank" rel="noopener noreferrer" class="focus:outline-none flex items-center">
+                                    Indus Dragon: Chess Engine
+                                    <svg class="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </h4>
+                            <span class="text-xs text-[#ffc0ad] font-semibold tracking-wide bg-[#f4775b]/10 px-3 py-1 rounded-md">C++, PyTorch, AVX2</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Trained a custom MLP on 25M self-play positions. Deployed for ultra-fast CPU inference using AVX2 & INT8 vector operations. Achieved 3M+ nodes/second and 2200+ ELO.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group relative flex flex-col items-start gap-4 bg-[#1b1d20] transition-all hover:bg-[#202327] p-6 rounded-xl border border-zinc-800/70 hover:border-[#f4775b]/40 shadow-sm hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-full">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3 gap-2">
+                            <h4 class="text-zinc-100 font-bold text-lg group-hover:text-[#ff9a7a] transition-colors">
+                                <a href="https://github.com/Razamindset/sequence-modeling-from-scratch" target="_blank" rel="noopener noreferrer" class="focus:outline-none flex items-center">
+                                    Neural Networks from Scratch
+                                    <svg class="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </h4>
+                            <span class="text-xs text-[#ffc0ad] font-semibold tracking-wide bg-[#f4775b]/10 px-3 py-1 rounded-md">Python, NumPy</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Built MLPs, CNNs, RNNs, LSTMs, GRUs, and a full GPT-1 style Transformer entirely without ML libraries. Implemented core optimizers including Adam, SGD, and RMSprop.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research and Writing Section -->
+        <section id="research" class="scroll-mt-24 reveal">
+            <div class="sticky top-0 z-10 bg-[#121212]/95 backdrop-blur py-5 mb-8 -mx-6 px-6 lg:static lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:m-0 lg:mb-8 border-b border-zinc-800/50 lg:border-none">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-zinc-100 flex items-center">
+                    <span class="w-8 h-px bg-[#f4775b] mr-4"></span> Research & Writing
+                </h2>
+            </div>
+
+            <div class="bg-[#1b1d20] p-6 sm:p-7 rounded-xl border border-zinc-800/70">
+                <p class="text-white font-semibold text-lg leading-snug mb-2">Ideas I plan to explore and write about</p>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-5">Practical research notes connecting machine-learning concepts with systems that work in the real world.</p>
+                <div class="flex flex-wrap gap-2.5">
+                    <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Computer Vision</span>
+                    <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Efficient AI & Edge Inference</span>
+                    <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Neural Networks from Scratch</span>
+                    <span class="px-3 py-1.5 bg-[#f4775b]/10 text-[#ffc0ad] text-xs rounded-md font-medium">Applied AI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education -->
+        <section id="experience" class="scroll-mt-24 mb-24 reveal">
+            <div class="sticky top-0 z-10 bg-[#121212]/95 backdrop-blur py-5 mb-8 -mx-6 px-6 lg:static lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:m-0 lg:mb-8 border-b border-zinc-800/50 lg:border-none">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-zinc-100 flex items-center">
+                    <span class="w-8 h-px bg-[#f4775b] mr-4"></span> Experience & Education
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Experience -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-8 border-b border-zinc-800 pb-2">Experience</h4>
+                    <div class="border-l-2 border-zinc-800/80 pl-6 space-y-10">
+                        <div class="relative group">
+                            <div class="absolute w-3 h-3 bg-zinc-500 rounded-full -left-[1.7rem] top-1.5 border-2 border-[#121212] group-hover:bg-[#ff9a7a] group-hover:scale-125 transition-all shadow-[0_0_8px_rgba(244,119,91,0)] group-hover:shadow-[0_0_8px_rgba(244,119,91,0.5)]"></div>
+                            <h5 class="text-zinc-100 font-bold text-base">Co-founder</h5>
+                            <p class="text-zinc-400 text-sm mt-1 mb-2">ScreenSnipper</p>
+                            <a href="https://screensnipper.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-[#f4775b] hover:text-[#ff9a7a] transition-colors uppercase tracking-wider">Visit Site <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+                        </div>
+                        <div class="relative group">
+                            <div class="absolute w-3 h-3 bg-zinc-500 rounded-full -left-[1.7rem] top-1.5 border-2 border-[#121212] group-hover:bg-[#ff9a7a] group-hover:scale-125 transition-all shadow-[0_0_8px_rgba(244,119,91,0)] group-hover:shadow-[0_0_8px_rgba(244,119,91,0.5)]"></div>
+                            <h5 class="text-zinc-100 font-bold text-base">Contributor</h5>
+                            <p class="text-zinc-400 text-sm mt-1">Chesskit & Infinitunes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-8 border-b border-zinc-800 pb-2">Education</h4>
+                    <div class="bg-[#1b1d20] p-6 rounded-xl border border-zinc-800/70 shadow-lg hover:border-[#f4775b]/40 transition-all hover:-translate-y-1 duration-300">
+                        <div class="flex flex-col mb-4">
+                            <h5 class="text-zinc-100 font-bold text-lg">BS Artificial Intelligence</h5>
+                            <span class="text-zinc-500 text-sm font-semibold tracking-wide mt-1">PAF-IAST, Pakistan &bull; Exp. 2028</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2 mb-4">
+                            <span class="px-3 py-1 bg-[#f4775b]/15 text-[#ffc0ad] text-xs rounded-md font-bold">CGPA: 3.91/4.0</span>
+                        </div>
+                        <div class="border-t border-zinc-800/50 pt-4 mt-2">
+                            <p class="text-zinc-500 text-xs leading-relaxed font-medium">
+                                <strong class="text-zinc-300">Coursework:</strong> Machine Learning, Deep Learning, Cloud Computing, Algorithms and Data Structures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    // Intersection Observer for Navigation Highlighting
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-30% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute('id');
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active', 'text-white');
+                        link.classList.add('text-zinc-500');
+                        
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.add('active', 'text-white');
+                            link.classList.remove('text-zinc-500');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            navObserver.observe(section);
+        });
+
+        // Intersection Observer for Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+        
+        // Trigger reveal for elements already in view on load
+        setTimeout(() => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight) {
+                    el.classList.add('active');
+                }
+            });
+        }, 100);
+    });
+</script>
+
+</body>
+</html>
